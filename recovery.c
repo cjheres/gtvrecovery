@@ -447,7 +447,7 @@ static void system_information()
 	screen_topper();
 	DFBCHECK (primary->DrawString (primary, getrecver, -1, 40,  160,  DSTF_TOP | DSTF_LEFT ));
 	DFBCHECK (primary->DrawString (primary, gethwtype, -1, 40,  230,  DSTF_TOP | DSTF_LEFT ));
-	DFBCHECK (primary->DrawString (primary, getregion, -1, 40,  300,  DSTF_TOP | DSTF_LEFT ));
+//	DFBCHECK (primary->DrawString (primary, getregion, -1, 40,  300,  DSTF_TOP | DSTF_LEFT ));
 	DFBCHECK (primary->DrawString (primary, getver, -1, 40,  370,  DSTF_TOP | DSTF_LEFT ));
 	DFBCHECK (primary->DrawString (primary, getdisplay, -1, 40,  500,  DSTF_TOP | DSTF_LEFT ));
 //	DFBCHECK (primary->DrawString (primary, rootstatus, -1, 40,  430,  DSTF_TOP | DSTF_LEFT ));
@@ -474,10 +474,10 @@ static void about()
 	printf("About\r\n");
 
 	screen_topper();
-	DFBCHECK (primary->DrawString (primary, "Recovery and exploit by cj_000.", -1, 40,  160,  DSTF_TOP | DSTF_LEFT ));
-	DFBCHECK (primary->DrawString (primary, "Visit GTVHacker.com for more info", -1, 40,  230,  DSTF_TOP | DSTF_LEFT ));
-	DFBCHECK (primary->DrawString (primary, "GTVHacker is:", -1, 40,  430,  DSTF_TOP | DSTF_LEFT ));
-	DFBCHECK (primary->DrawString (primary, "[mbm], AgentHH, cj_000, tdweng, zenofex", -1, 40,  500,  DSTF_TOP | DSTF_LEFT ));
+	DFBCHECK (primary->DrawString (primary, "Visit GTVHacker.com for more info", -1, 40,  160,  DSTF_TOP | DSTF_LEFT ));
+	DFBCHECK (primary->DrawString (primary, "GTVHacker is:", -1, 40,  360,  DSTF_TOP | DSTF_LEFT ));
+	DFBCHECK (primary->DrawString (primary, "AgentHH, cj_000, gynophage,", -1, 40,  430,  DSTF_TOP | DSTF_LEFT ));
+	DFBCHECK (primary->DrawString (primary, "[mbm], tdweng, zenofex", -1, 40,  500,  DSTF_TOP | DSTF_LEFT ));
 	DFBCHECK (primary->DrawString (primary, "Press Q to go back", -1, 40,  570,  DSTF_TOP | DSTF_LEFT ));
 
 	DFBCHECK (primary->Flip (primary, NULL, DSFLIP_WAITFORSYNC));
@@ -486,6 +486,26 @@ static void about()
 
 	wait_to_exit();
 }
+
+
+static void some_function()
+{
+
+	printf("Some Function\r\n");
+
+	screen_topper();
+	DFBCHECK (primary->DrawString (primary, "Hey look, a secret menu!", -1, 40,  160,  DSTF_TOP | DSTF_LEFT ));
+	DFBCHECK (primary->DrawString (primary, "It's cj_000 saying hello!", -1, 40,  230,  DSTF_TOP | DSTF_LEFT ));
+	DFBCHECK (primary->DrawString (primary, "I hope that you enjoy this", -1, 40,  430,  DSTF_TOP | DSTF_LEFT ));
+	DFBCHECK (primary->DrawString (primary, "Drop me a line: cj_000@gtvhacker.com", -1, 40,  500,  DSTF_TOP | DSTF_LEFT ));
+	DFBCHECK (primary->DrawString (primary, "Press Q to go back", -1, 40,  570,  DSTF_TOP | DSTF_LEFT ));
+
+	DFBCHECK (primary->Flip (primary, NULL, DSFLIP_WAITFORSYNC));
+
+	wait_to_exit();
+}
+
+
 
 
  // The font we will use to draw the text.
@@ -572,6 +592,9 @@ int main (int argc, char **argv)
 		              break;
 		         case DIKS_5:
 		              reboot_prog();
+		              break;
+		         case DIKS_9:
+		              some_function();
 		              break;
 
 
